@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            background: #2196f3;
+            padding: 14px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background: #1976d2;
+            border-radius: 4px;
+        }
+
+        /* Page Content */
+        .section {
+            padding: 40px;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('download')">Download</a>
+        <a href="#" onclick="showPage('help')">Help</a>
+        <a href="#" onclick="showPage('about')">About</a>
+    </div>
+
+    <div id="home" class="section active">
+        <h2>Home Page</h2>
+        <p>Welcome to our website!</p>
+    </div>
+
+    <div id="download" class="section">
+        <h2>Download Page</h2>
+        <p>Download our files here.</p>
+    </div>
+
+    <div id="help" class="section">
+        <h2>Help Page</h2>
+        <p>How can we assist you?</p>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About Page</h2>
+        <p>This website is created to help users navigate easily.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.section');
+            pages.forEach(p => p.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
